@@ -1,5 +1,18 @@
-# Path-based git attributes
-# https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# PHP files
+*.php     text eol=lf diff=php
+*.phpt    text eol=lf diff=php
+*.phtml   text eol=lf diff=html
+*.twig    text eol=lf
+*.phar    binary
+
+# Configuration
+phpcs.xml    text eol=lf
+phpunit.xml  text eol=lf
+phpstan.neon text eol=lf
+psalm.xml    text eol=lf
 
 # Ignore all test and documentation with "export-ignore".
 /.gitattributes     export-ignore
