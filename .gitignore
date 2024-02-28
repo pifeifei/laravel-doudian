@@ -1,5 +1,7 @@
-build
+.idea/
+build/
+vendor/
 docs
-vendor
 coverage
-.idea
+
+composer.lock
