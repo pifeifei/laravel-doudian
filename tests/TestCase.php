@@ -13,7 +13,7 @@ class TestCase extends BaseTestCase
 
     public function setUp(): void
     {
-        $this->setUpTheTestEnvironment();
+        $this->reloadApplication();
 
         Cache::shouldReceive('get')
             ->with(self::OAUTH_CACHE_KEY, Mockery::any())
