@@ -3,19 +3,16 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class DutyFree extends BaseRequest
 {
     /**
      * 商家接单.
      *
-     * @param  array  $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @return array
      * @throws RequestException
-     *
-     * @throws InvalidArgumentException
      */
     public function orderConfirm(array $params): array
     {
@@ -25,12 +22,10 @@ class DutyFree extends BaseRequest
     /**
      * 海南项目服务商回传实操节点.
      *
-     * @param  array  $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @return array
      * @throws RequestException
-     *
-     * @throws InvalidArgumentException
      */
     public function orderOperate(array $params): array
     {
@@ -40,12 +35,10 @@ class DutyFree extends BaseRequest
     /**
      * 商家拉单.
      *
-     * @param  array  $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @return array
      * @throws RequestException
-     *
-     * @throws InvalidArgumentException
      */
     public function orderList(array $params): array
     {

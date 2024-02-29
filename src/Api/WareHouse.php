@@ -3,19 +3,16 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class WareHouse extends BaseRequest
 {
     /**
      * 查询库存.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function stockNum(array $params): array
     {
@@ -25,12 +22,10 @@ class WareHouse extends BaseRequest
     /**
      * 创建单个区域仓.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function create(array $params): array
     {
@@ -40,12 +35,10 @@ class WareHouse extends BaseRequest
     /**
      * 批量创建区域仓.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function createBatch(array $params): array
     {
@@ -55,12 +48,10 @@ class WareHouse extends BaseRequest
     /**
      * 编辑区域仓.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function edit(array $params): array
     {
@@ -70,12 +61,10 @@ class WareHouse extends BaseRequest
     /**
      * 查询区域仓.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function info(array $params): array
     {
@@ -85,12 +74,10 @@ class WareHouse extends BaseRequest
     /**
      * 批量查询区域仓.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function list(array $params): array
     {
@@ -100,12 +87,10 @@ class WareHouse extends BaseRequest
     /**
      * 地址与区域仓解绑.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function removeAddr(array $params): array
     {
@@ -115,12 +100,10 @@ class WareHouse extends BaseRequest
     /**
      * 绑定单个地址到区域仓.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function setAddr(array $params): array
     {
@@ -130,12 +113,10 @@ class WareHouse extends BaseRequest
     /**
      * 批量绑定地址与区域仓.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function setAddrBatch(array $params): array
     {
@@ -145,12 +126,10 @@ class WareHouse extends BaseRequest
     /**
      * 设置指定地址下的仓的优先级.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function setPriority(array $params): array
     {
@@ -160,12 +139,10 @@ class WareHouse extends BaseRequest
     /**
      * 设置sku发货时效.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function setSkuShipTime(array $params): array
     {
@@ -175,12 +152,10 @@ class WareHouse extends BaseRequest
     /**
      * 库存调整(盘点和转移).
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function adjustInventory(array $params): array
     {
@@ -190,12 +165,10 @@ class WareHouse extends BaseRequest
     /**
      * 商家发货时效配置推荐.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function deliveryList(array $params): array
     {

@@ -3,19 +3,16 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Coupons extends BaseRequest
 {
     /**
      * 卡券取消核销接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function cancelVerify(array $params): array
     {
@@ -25,12 +22,10 @@ class Coupons extends BaseRequest
     /**
      * 卡券废弃接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function abandon(array $params): array
     {
@@ -40,12 +35,10 @@ class Coupons extends BaseRequest
     /**
      * 卡券同步.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function syncV2(array $params): array
     {
@@ -55,12 +48,10 @@ class Coupons extends BaseRequest
     /**
      * 卡券核销接口V2版本.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function verifyV2(array $params): array
     {
@@ -70,12 +61,10 @@ class Coupons extends BaseRequest
     /**
      * 卡券核销次数更新.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function certVerifyUpdate(array $params): array
     {
@@ -85,10 +74,8 @@ class Coupons extends BaseRequest
     /**
      * 三方卡券列表查询.
      *
-     * @param  array  $params
-     *
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
      */
@@ -100,10 +87,8 @@ class Coupons extends BaseRequest
     /**
      * 三方卡券延期.
      *
-     * @param  array  $params
-     *
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
      */

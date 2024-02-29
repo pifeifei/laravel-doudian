@@ -3,16 +3,15 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Material extends BaseRequest
 {
     /**
      * 查询商品详情.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function materialsProductsDetails(array $params): array
@@ -23,9 +22,9 @@ class Material extends BaseRequest
     /**
      * 创建文件夹.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function createFolder(array $params): array
@@ -36,9 +35,9 @@ class Material extends BaseRequest
     /**
      * 将文件夹移动到回收站.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function moveFolderToRecycleBin(array $params): array
@@ -49,9 +48,9 @@ class Material extends BaseRequest
     /**
      * 编辑/移动文件夹.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function editFolder(array $params): array
@@ -62,9 +61,9 @@ class Material extends BaseRequest
     /**
      * 移动素材到回收站.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function moveMaterialToRecycleBin(array $params): array
@@ -75,9 +74,9 @@ class Material extends BaseRequest
     /**
      * 从回收站中恢复素材.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function recoverMaterial(array $params): array
@@ -88,9 +87,9 @@ class Material extends BaseRequest
     /**
      * 编辑素材.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function editMaterial(array $params): array
@@ -101,9 +100,9 @@ class Material extends BaseRequest
     /**
      * 从回收站恢复文件夹.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function recoverFolder(array $params): array
@@ -114,9 +113,9 @@ class Material extends BaseRequest
     /**
      * 彻底删除素材.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function deleteMaterial(array $params): array
@@ -127,9 +126,9 @@ class Material extends BaseRequest
     /**
      * 彻底删除文件夹.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function deleteFolder(array $params): array
@@ -140,9 +139,9 @@ class Material extends BaseRequest
     /**
      * 查素材详情.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function queryMaterialDetail(array $params): array
@@ -153,9 +152,9 @@ class Material extends BaseRequest
     /**
      * 同步上传素材.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function uploadImageSync(array $params): array
@@ -166,9 +165,9 @@ class Material extends BaseRequest
     /**
      * 素材中心--异步上传视频接口.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function uploadVideoAsync(array $params): array
@@ -179,9 +178,9 @@ class Material extends BaseRequest
     /**
      * 搜索素材.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function searchMaterial(array $params): array
@@ -192,9 +191,9 @@ class Material extends BaseRequest
     /**
      * 搜索文件夹.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function searchFolder(array $params): array
@@ -205,9 +204,9 @@ class Material extends BaseRequest
     /**
      * 查看文件夹详情.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function getFolderInfo(array $params): array
@@ -218,9 +217,9 @@ class Material extends BaseRequest
     /**
      * 批量上传视频到素材中心.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function batchUploadVideoAsync(array $params): array
@@ -231,9 +230,9 @@ class Material extends BaseRequest
     /**
      * 批量上传图片到素材中心.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function batchUploadImageSync(array $params): array
@@ -244,9 +243,9 @@ class Material extends BaseRequest
     /**
      * 获取商家容量详情.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function getCapInfo(array $params): array

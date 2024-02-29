@@ -3,16 +3,15 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Token extends BaseRequest
 {
     /**
      * 生成token API.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function create(array $params): array
@@ -23,9 +22,9 @@ class Token extends BaseRequest
     /**
      * 刷新 token API.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function refresh(array $params): array

@@ -3,17 +3,15 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Shop extends BaseRequest
 {
     /**
      * 获取店铺的已授权品牌列表.
      *
-     * @throws RequestException
-     * @throws InvalidArgumentException
+     * @return array<string, mixed>
      *
-     * @return array
+     * @throws RequestException
      */
     public function brandList(): array
     {
@@ -23,12 +21,10 @@ class Shop extends BaseRequest
     /**
      * 获取店铺后台供商家发布商品的类目.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function getShopCategory(array $params): array
     {
@@ -38,12 +34,10 @@ class Shop extends BaseRequest
     /**
      * 售后地址列表接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function addressList(array $params): array
     {
@@ -53,12 +47,10 @@ class Shop extends BaseRequest
     /**
      * 店铺创建售后地址接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function addressCreate(array $params): array
     {
@@ -68,12 +60,10 @@ class Shop extends BaseRequest
     /**
      * 店铺创建售后地址接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function addressUpdate(array $params): array
     {
@@ -83,10 +73,8 @@ class Shop extends BaseRequest
     /**
      * 设置尾款信息.
      *
-     * @param  array  $params
-     *
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
      */
@@ -98,10 +86,8 @@ class Shop extends BaseRequest
     /**
      * 查询店铺的应用权益.
      *
-     * @param  array  $params
-     *
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
      */

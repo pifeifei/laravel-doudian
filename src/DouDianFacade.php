@@ -6,17 +6,15 @@ use Illuminate\Support\Facades\Facade;
 
 class DouDianFacade extends Facade
 {
-    public static function __callStatic($name, $args)
+    public static function __callStatic($method, $args)
     {
-        return app('DouDian')->$name;
+        return app('DouDian')->$method;
     }
 
     /**
      * Get the registered name of the component.
-     *
-     * @return string
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'doudian';
     }

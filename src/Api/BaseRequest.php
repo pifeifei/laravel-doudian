@@ -5,28 +5,29 @@ namespace Abbotton\DouDian\Api;
 use GuzzleHttp\Client;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Cache;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class BaseRequest
 {
     public const OAUTH_CACHE_KEY = 'doudian_oauth_token';
+
     /**
-     * @var array 配置参数
+     * @var array<string, mixed> 配置参数
      */
-    private $config;
-    private $shop_id;
+    private array $config;
+
+    private ?int $shop_id;
 
     /**
      * @var string 接口地址
      */
-    private $baseUrl = 'https://openapi-fxg.jinritemai.com/';
+    private string $baseUrl = 'https://openapi-fxg.jinritemai.com/';
+
+    private Client $client;
 
     /**
-     * @var Client
+     * @param  array<string, mixed>  $config
      */
-    private $client;
-
-    public function __construct(array $config, $shop_id)
+    public function __construct(array $config, ?int $shop_id = null)
     {
         $this->config = $config;
         $this->shop_id = $shop_id;
@@ -41,16 +42,12 @@ class BaseRequest
     }
 
     /**
-     * 发起GET请求
+     * 发起 GET 请求
      *
-     * @param string $url
-     * @param array  $params
-     * @param bool   $needSign
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function httpGet(string $url, array $params = [], bool $needSign = true): array
     {
@@ -58,17 +55,12 @@ class BaseRequest
     }
 
     /**
-     * 发起HTTP请求
+     * 发起 HTTP 请求
      *
-     * @param string $method
-     * @param string $url
-     * @param array  $params
-     * @param bool   $needSign
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     private function request(string $method, string $url, array $params = [], bool $needSign = true): array
     {
@@ -90,22 +82,19 @@ class BaseRequest
     /**
      * 组合请求参数.
      *
-     * @param string $url
-     * @param array  $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     protected function generateParams(string $url, array $params): array
     {
         $url = str_replace('/', '.', $url);
 
-        $accessToken = "";
-        if (! in_array($url, ["token.create","token.refresh"])) {
+        $accessToken = '';
+        if (! in_array($url, ['token.create', 'token.refresh'])) {
             $accessToken = $this->getAccessToken();
-        };
+        }
 
         $public = [
             'app_key' => $this->config['app_key'],
@@ -135,19 +124,25 @@ class BaseRequest
      * 获取TOKEN.
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return mixed|string
      */
     private function getAccessToken(): string
     {
+        /** @var array<array-key, string> $oauthToken */
         $oauthToken = Cache::get(self::OAUTH_CACHE_KEY.$this->shop_id, []);
         if (! $oauthToken || ! $oauthToken['refresh_token']) {
             return $this->requestAccessToken();
         }
 
-        if ($oauthToken['access_token_expired_at'] - time() <= 100 && $oauthToken['refresh_token_expired_at'] > time()) {
+        $now = time();
+        if ($oauthToken['access_token_expired_at'] <= 3600 + $now && $oauthToken['access_token_expired_at'] > $now) {
             return $this->updateAccessToken($oauthToken['refresh_token']);
+        }
+        if ($oauthToken['refresh_token_expired_at'] > $now && $oauthToken['access_token_expired_at'] < $now) {
+            return $this->updateAccessToken($oauthToken['refresh_token']);
+        }
+
+        if ($oauthToken['refresh_token_expired_at'] < $now) {
+            return $this->requestAccessToken();
         }
 
         return $oauthToken['access_token'];
@@ -157,9 +152,6 @@ class BaseRequest
      * 请求TOKEN.
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return string
      */
     private function requestAccessToken(): string
     {
@@ -180,7 +172,7 @@ class BaseRequest
         $response['data']['access_token_expired_at'] = time() + $response['data']['expires_in'];
         $response['data']['refresh_token_expired_at'] = strtotime('+14 day');
 
-        Cache::set(self::OAUTH_CACHE_KEY.$this->shop_id, $response['data']);
+        Cache::put(self::OAUTH_CACHE_KEY.$this->shop_id, $response['data'], 14 * 86400);
 
         return $response['data']['access_token'];
     }
@@ -188,12 +180,7 @@ class BaseRequest
     /**
      * 刷新TOKEN.
      *
-     * @param string $refreshToken
-     *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return string
      */
     private function updateAccessToken(string $refreshToken): string
     {
@@ -211,7 +198,7 @@ class BaseRequest
         $response['data']['access_token_expired_at'] = time() + $response['data']['expires_in'];
         $response['data']['refresh_token_expired_at'] = strtotime('+14 day');
 
-        Cache::set(self::OAUTH_CACHE_KEY.$this->shop_id, $response['data']);
+        Cache::put(self::OAUTH_CACHE_KEY.$this->shop_id, $response['data'], 14 * 86400);
 
         return $response['data']['access_token'];
     }
@@ -219,21 +206,17 @@ class BaseRequest
     /**
      * 发起POST请求
      *
-     * @param string $url
-     * @param array  $params
-     * @param bool   $needSign
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function httpPost(string $url, array $params = [], bool $needSign = true): array
     {
         return $this->request('post', $url, $params, $needSign);
     }
 
-    public function setHttpClient($client)
+    public function setHttpClient(Client $client): self
     {
         $this->client = $client;
 

@@ -3,19 +3,16 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Yunc extends BaseRequest
 {
     /**
      * toB场景取消出库单.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function cancelOutboundOrderToB(array $params): array
     {
@@ -25,12 +22,10 @@ class Yunc extends BaseRequest
     /**
      * 商家入驻仓关系查询.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function shopWarehouseRefQuery(array $params): array
     {
@@ -40,12 +35,10 @@ class Yunc extends BaseRequest
     /**
      * wms入库单回告.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function wmsInboundCallback(array $params): array
     {
@@ -55,12 +48,10 @@ class Yunc extends BaseRequest
     /**
      * 云仓出库接单.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function cloudCreateOutboundOrder(array $params): array
     {
@@ -70,12 +61,10 @@ class Yunc extends BaseRequest
     /**
      * 销退入库取消.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function cloudCancelInboundOrder(array $params): array
     {
@@ -85,12 +74,11 @@ class Yunc extends BaseRequest
     /**
      * 销退单入库.
      *
-     * @param array $params
+     *
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function cloudCreateInboundOrder(array $params): array
     {
@@ -100,12 +88,11 @@ class Yunc extends BaseRequest
     /**
      * 云仓出库取消.
      *
-     * @param array $params
+     *
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function cloudCancelOutboundOrder(array $params): array
     {
@@ -115,12 +102,10 @@ class Yunc extends BaseRequest
     /**
      * 给外部WMS调用的推送出库信息回传.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function pushOutboundFeedback(array $params): array
     {
@@ -130,12 +115,11 @@ class Yunc extends BaseRequest
     /**
      * 货品推送接口-ERP(单个).
      *
-     * @param array $params
+     *
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function erpCargoSinglePush(array $params): array
     {
@@ -145,12 +129,10 @@ class Yunc extends BaseRequest
     /**
      * erp创建入库单.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function erpInboundCreate(array $params): array
     {
@@ -160,12 +142,10 @@ class Yunc extends BaseRequest
     /**
      * 设置指定地址下的仓的优先级.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function erpInboundCancel(array $params): array
     {
@@ -175,12 +155,10 @@ class Yunc extends BaseRequest
     /**
      * 库存调整(盘点和转移).
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function adjustInventory(array $params): array
     {
@@ -190,12 +168,10 @@ class Yunc extends BaseRequest
     /**
      * toB出库单.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function createOutboundOrderToB(array $params): array
     {
@@ -205,12 +181,10 @@ class Yunc extends BaseRequest
     /**
      * 仓储系统回传发货信息.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function deliveryInfoNotify(array $params): array
     {
@@ -220,10 +194,8 @@ class Yunc extends BaseRequest
     /**
      * WMS出库明细回传.
      *
-     * @param  array  $params
-     *
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
      */
@@ -235,10 +207,8 @@ class Yunc extends BaseRequest
     /**
      * 入库明细回传，WMS回传入库数据时，使用该接口回传.
      *
-     * @param  array  $params
-     *
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
      */

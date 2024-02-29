@@ -11,7 +11,7 @@ use ReflectionClass;
 
 class DouDianTest extends TestCase
 {
-    public function test_can_throw_invalid_argument_exception()
+    public function test_can_throw_invalid_argument_exception(): void
     {
         $this->expectExceptionMessage('配置有误, 请填写app_key');
         (new DouDian())->shop->brandList();
@@ -20,33 +20,36 @@ class DouDianTest extends TestCase
         (new DouDian(['app_key' => 'foo']))->shop->brandList();
     }
 
-    public function test_can_throw_class_not_found_exception()
+    public function test_can_throw_class_not_found_exception(): void
     {
-        $this->expectExceptionMessage($this->getClass('foo').', Not found');
+        $this->expectExceptionMessage($this->getClass('foo').' Not found');
         $this->expectExceptionCode(404);
         $config = $this->getConfig();
 
-        (new DouDian($config))->foo->bar();
+        (new DouDian($config))->foo->bar(); // @phpstan-ignore-line
     }
 
-    private function getClass($class): string
+    private function getClass(string $class): string
     {
         return 'Abbotton\\DouDian\\Api\\'.ucfirst($class);
     }
 
+    /**
+     * @return array<string, string>
+     */
     private function getConfig(): array
     {
         return ['app_key' => 'foo', 'app_secret' => 'bar'];
     }
 
-    public function test_can_get_exists_instance()
+    public function test_can_get_exists_instance(): void
     {
         $shop = (new DouDian($this->getConfig()))->shop;
 
-        $this->assertInstanceOf($this->getClass('shop'), $shop);
+        $this->assertInstanceOf($this->getClass('shop'), $shop); // @phpstan-ignore-line
     }
 
-    public function test_all_requests_will_return_the_correct_response()
+    public function test_all_requests_will_return_the_correct_response(): void
     {
         $mock = new MockHandler();
         $handlerStack = new HandlerStack($mock);
@@ -75,7 +78,7 @@ class DouDianTest extends TestCase
         }
     }
 
-    public function test_can_set_shop_id()
+    public function test_can_set_shop_id(): void
     {
         $app = new DouDian($this->getConfig());
 

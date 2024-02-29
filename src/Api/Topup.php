@@ -3,16 +3,15 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Topup extends BaseRequest
 {
     /**
      * 商家充值结果回调.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function result(array $params): array
@@ -23,9 +22,9 @@ class Topup extends BaseRequest
     /**
      * 获取叶子类目可选的账号模板id.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function accountTemplateList(array $params): array

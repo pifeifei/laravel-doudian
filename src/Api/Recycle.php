@@ -3,19 +3,16 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Recycle extends BaseRequest
 {
     /**
      * 上传估价.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function createPrice(array $params): array
     {
@@ -25,12 +22,10 @@ class Recycle extends BaseRequest
     /**
      * 回收商确认收货操作.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function confirmReceive(array $params): array
     {
@@ -40,12 +35,10 @@ class Recycle extends BaseRequest
     /**
      * 回传质检通过和价格.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function qualityTestingResult(array $params): array
     {
@@ -55,12 +48,10 @@ class Recycle extends BaseRequest
     /**
      * 回收商在用户确认前调整报价接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function changePrice(array $params): array
     {
@@ -70,12 +61,10 @@ class Recycle extends BaseRequest
     /**
      * 回收商退货发货.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function applyChangePrice(array $params): array
     {
@@ -85,12 +74,10 @@ class Recycle extends BaseRequest
     /**
      * 寄售成功.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function sellSucceed(array $params): array
     {
@@ -100,12 +87,10 @@ class Recycle extends BaseRequest
     /**
      * 回收商退货发货.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function logisticsBack(array $params): array
     {
@@ -115,12 +100,10 @@ class Recycle extends BaseRequest
     /**
      * 拉取订单列表接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function buyerGetOrderList(array $params): array
     {
@@ -130,12 +113,10 @@ class Recycle extends BaseRequest
     /**
      * 获得订单详情.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function buyerGetOrderDetail(array $params): array
     {

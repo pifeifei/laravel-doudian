@@ -3,19 +3,16 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class BuyIn extends BaseRequest
 {
     /**
      * 商品定向计划管理.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function orienPlanCtrl(array $params): array
     {
@@ -25,12 +22,10 @@ class BuyIn extends BaseRequest
     /**
      * 商品定向计划查询.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function orienPlanList(array $params): array
     {
@@ -40,12 +35,10 @@ class BuyIn extends BaseRequest
     /**
      * 向指定定向计划中添加达人.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function orienPlanAuthorsAdd(array $params): array
     {
@@ -55,12 +48,10 @@ class BuyIn extends BaseRequest
     /**
      * 定向计划达人申请审核.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function orienPlanAudit(array $params): array
     {
@@ -70,12 +61,10 @@ class BuyIn extends BaseRequest
     /**
      * 创建/修改商品定向计划.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function createOrUpdateOrienPlan(array $params): array
     {
@@ -85,12 +74,10 @@ class BuyIn extends BaseRequest
     /**
      * 查询定向计划作者列表.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function orienPlanAuthors(array $params): array
     {
@@ -100,12 +87,10 @@ class BuyIn extends BaseRequest
     /**
      * 团长活动查询接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function activitySearch(array $params): array
     {
@@ -115,12 +100,10 @@ class BuyIn extends BaseRequest
     /**
      * 商品团长活动提报接口.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function applyActivities(array $params): array
     {
@@ -130,12 +113,10 @@ class BuyIn extends BaseRequest
     /**
      * 创建/修改商品专属推广计划.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function exclusivePlan(array $params): array
     {
@@ -145,12 +126,10 @@ class BuyIn extends BaseRequest
     /**
      * 创建/修改普通商品推广计划.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function simplePlan(array $params): array
     {
@@ -160,12 +139,10 @@ class BuyIn extends BaseRequest
     /**
      * 机构查询达人直播间分销订单.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function instituteOrderAds(array $params): array
     {
@@ -175,9 +152,9 @@ class BuyIn extends BaseRequest
     /**
      * 商品状态查询.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function materialsProductStatus(array $params): array
@@ -188,9 +165,9 @@ class BuyIn extends BaseRequest
     /**
      * 查询机构联盟订单.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function queryInstituteOrders(array $params): array
@@ -201,9 +178,9 @@ class BuyIn extends BaseRequest
     /**
      * 达人PID创建.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolPidCreate(array $params): array
@@ -214,9 +191,9 @@ class BuyIn extends BaseRequest
     /**
      * 达人PID查询接口.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolPidList(array $params): array
@@ -227,9 +204,9 @@ class BuyIn extends BaseRequest
     /**
      * 达人PID 编辑.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolPidEdit(array $params): array
@@ -240,9 +217,9 @@ class BuyIn extends BaseRequest
     /**
      * 达人PID删除.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolPidDel(array $params): array
@@ -253,9 +230,9 @@ class BuyIn extends BaseRequest
     /**
      * 商品分销转链.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolProductShare(array $params): array
@@ -266,9 +243,9 @@ class BuyIn extends BaseRequest
     /**
      * 机构PID创建.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function institutePidCreate(array $params): array
@@ -279,9 +256,9 @@ class BuyIn extends BaseRequest
     /**
      * 机构PID 编辑.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function institutePidEdit(array $params): array
@@ -292,9 +269,9 @@ class BuyIn extends BaseRequest
     /**
      * 机构PID删除.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function institutePidDel(array $params): array
@@ -305,9 +282,9 @@ class BuyIn extends BaseRequest
     /**
      * 直播间分销物料查询.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function liveShareMaterial(array $params): array
@@ -318,9 +295,9 @@ class BuyIn extends BaseRequest
     /**
      * 机构获取达人直播间分享链接.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function instituteLiveShare(array $params): array
@@ -331,9 +308,9 @@ class BuyIn extends BaseRequest
     /**
      * 机构PID查询接口.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function institutePidList(array $params): array
@@ -344,9 +321,9 @@ class BuyIn extends BaseRequest
     /**
      * 查询达人直播间分销订单.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolOrderAds(array $params): array
@@ -357,9 +334,9 @@ class BuyIn extends BaseRequest
     /**
      * 查询机构下团长活动特殊申请.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function specialApplyList(array $params): array
@@ -370,9 +347,9 @@ class BuyIn extends BaseRequest
     /**
      * 团长活动特殊申请审核.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function specialApplyDeal(array $params): array
@@ -383,9 +360,9 @@ class BuyIn extends BaseRequest
     /**
      * 查询达人视角商品详情.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolMaterialsProductsDetails(array $params): array
@@ -396,9 +373,9 @@ class BuyIn extends BaseRequest
     /**
      * 查询机构联盟MCN机构订单.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function instituteOrderMCN(array $params): array
@@ -409,9 +386,9 @@ class BuyIn extends BaseRequest
     /**
      * 机构查询团长订单.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function instituteOrderColonel(array $params): array
@@ -422,9 +399,9 @@ class BuyIn extends BaseRequest
     /**
      * 店铺会员绑定渠道关系创建.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function shopPidMemberCreate(array $params): array
@@ -435,9 +412,9 @@ class BuyIn extends BaseRequest
     /**
      * 查询商品 SKU.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function productSkus(array $params): array
@@ -448,9 +425,9 @@ class BuyIn extends BaseRequest
     /**
      * 商家可参与的团长活动查询接口.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function shopActivityList(array $params): array
@@ -461,9 +438,9 @@ class BuyIn extends BaseRequest
     /**
      * 延长推广待处理/已处理记录查询.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function activityProductExtendList(array $params): array
@@ -474,9 +451,9 @@ class BuyIn extends BaseRequest
     /**
      * 商家处理团长活动商品的推广延期申请.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function activityProductExtendApprove(array $params): array
@@ -487,9 +464,9 @@ class BuyIn extends BaseRequest
     /**
      * 团长可参与的二级团长活动查询接口.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function originColonelEnrollableActivityList(array $params): array
@@ -500,9 +477,9 @@ class BuyIn extends BaseRequest
     /**
      * 获取团长活动详情.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function colonelActivityDetail(array $params): array
@@ -513,9 +490,9 @@ class BuyIn extends BaseRequest
     /**
      * 团长获取可提报二级团长活动的商品列表.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function originColonelUnappliedProductList(array $params): array
@@ -526,9 +503,9 @@ class BuyIn extends BaseRequest
     /**
      * 团长报名二级团长活动.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function originColonelApplyActivities(array $params): array
@@ -539,9 +516,9 @@ class BuyIn extends BaseRequest
     /**
      * 商品选品来源转链.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function instPickSourceConvert(array $params): array
@@ -552,9 +529,9 @@ class BuyIn extends BaseRequest
     /**
      * 机构选品GMV查询接口.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function instGmv(array $params): array
@@ -565,9 +542,9 @@ class BuyIn extends BaseRequest
     /**
      * 机构选品GMV明细查询接口.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function instGmvDetail(array $params): array
@@ -578,9 +555,9 @@ class BuyIn extends BaseRequest
     /**
      * 分销直播间商品列表.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function distributionLiveProductList(array $params): array
@@ -591,9 +568,9 @@ class BuyIn extends BaseRequest
     /**
      * 商品口令转商品解析.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function shareCommandParse(array $params): array
@@ -604,9 +581,9 @@ class BuyIn extends BaseRequest
     /**
      * 检索精选联盟商品，需达人授权.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolMaterialsProductsSearch(array $params): array
@@ -617,9 +594,9 @@ class BuyIn extends BaseRequest
     /**
      * 获取达人直播间分享链接.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function kolLiveShare(array $params): array

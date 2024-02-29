@@ -3,19 +3,16 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Bats extends BaseRequest
 {
     /**
      * 查询订单是否需要质检.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
      * @throws RequestException
-     * @throws InvalidArgumentException
-     *
-     * @return array
      */
     public function getOrderList(array $params): array
     {
@@ -25,12 +22,10 @@ class Bats extends BaseRequest
     /**
      * 商家送检调用.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function saveInspectionInfo(array $params): array
     {
@@ -40,12 +35,10 @@ class Bats extends BaseRequest
     /**
      * 获取订单的质检结果.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function getOrderInspectionResult(array $params): array
     {
@@ -55,12 +48,10 @@ class Bats extends BaseRequest
     /**
      * 商家调用发货.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function shipping(array $params): array
     {
@@ -70,12 +61,10 @@ class Bats extends BaseRequest
     /**
      * 图片质检送检.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function saveInspectionOnline(array $params): array
     {
@@ -85,12 +74,10 @@ class Bats extends BaseRequest
     /**
      * 获取可图片鉴定的品牌.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function listBrand(array $params): array
     {

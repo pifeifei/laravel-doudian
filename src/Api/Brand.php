@@ -3,16 +3,15 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Brand extends BaseRequest
 {
     /**
      * 根据类目遍历品牌.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function list(array $params): array
@@ -23,9 +22,9 @@ class Brand extends BaseRequest
     /**
      * 通过前缀匹配召回品牌信息.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function getSug(array $params): array
@@ -36,9 +35,9 @@ class Brand extends BaseRequest
     /**
      * 兼容老品牌id转为新品牌id.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function convert(array $params): array

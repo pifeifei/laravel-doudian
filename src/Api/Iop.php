@@ -3,17 +3,15 @@
 namespace Abbotton\DouDian\Api;
 
 use Illuminate\Http\Client\RequestException;
-use Psr\SimpleCache\InvalidArgumentException;
 
 class Iop extends BaseRequest
 {
     /**
      * 查询店铺身份.
      *
-     * @throws RequestException
-     * @throws InvalidArgumentException
+     * @return array<string, mixed>
      *
-     * @return array
+     * @throws RequestException
      */
     public function roleGet(): array
     {
@@ -23,12 +21,10 @@ class Iop extends BaseRequest
     /**
      * 根据更新时间查询代打订单列表.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function orderList(array $params): array
     {
@@ -38,10 +34,9 @@ class Iop extends BaseRequest
     /**
      * 电子面单取号.
      *
-     * @throws InvalidArgumentException
-     * @throws RequestException
+     * @return array<string, mixed>
      *
-     * @return array
+     * @throws RequestException
      */
     public function waybillGet(): array
     {
@@ -51,12 +46,10 @@ class Iop extends BaseRequest
     /**
      * 取消电子面单.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function waybillCancel(array $params): array
     {
@@ -66,12 +59,10 @@ class Iop extends BaseRequest
     /**
      * 电子面单回传并发货.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function waybillReturn(array $params): array
     {
@@ -81,12 +72,10 @@ class Iop extends BaseRequest
     /**
      * 更新电子面单.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function waybillUpdate(array $params): array
     {
@@ -96,12 +85,10 @@ class Iop extends BaseRequest
     /**
      * 订单详情.
      *
-     * @param array $params
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
      *
-     * @throws InvalidArgumentException
      * @throws RequestException
-     *
-     * @return array
      */
     public function orderInfo(array $params): array
     {
@@ -111,9 +98,9 @@ class Iop extends BaseRequest
     /**
      * 【商家】分配代发订单.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function sellerDistribute(array $params): array
@@ -124,9 +111,9 @@ class Iop extends BaseRequest
     /**
      * 【商家】查看代发订单详情.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function sellerOrderInfo(array $params): array
@@ -137,9 +124,9 @@ class Iop extends BaseRequest
     /**
      * 【商家】查看代发订单列表.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function sellerOrderList(array $params): array
@@ -150,9 +137,9 @@ class Iop extends BaseRequest
     /**
      * 【商家】查询厂商管理列表.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function sellerSupplierList(array $params): array
@@ -163,9 +150,9 @@ class Iop extends BaseRequest
     /**
      * 【商家】取消分配代发订单.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function sellerCancleDistribute(array $params): array
@@ -176,9 +163,9 @@ class Iop extends BaseRequest
     /**
      * 【厂家】查询商家列表.
      *
-     * @param  array  $params
-     * @return array
-     * @throws InvalidArgumentException
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
      * @throws RequestException
      */
     public function getSellerList(array $params): array
