@@ -216,4 +216,30 @@ class Yunc extends BaseRequest
     {
         return $this->httpPost('wms/inboundDetailNotify', $params);
     }
+
+    /**
+     * 货品数据采集接口.
+     *
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
+     * @throws RequestException
+     */
+    public function syncCollectInfo(array $params): array
+    {
+        return $this->httpPost('wms/syncCollectInfo', $params);
+    }
+
+    /**
+     * 实时库存同步接口.
+     *
+     * @param  array<string, mixed>  $params
+     * @return array<string, mixed>
+     *
+     * @throws RequestException
+     */
+    public function realTimeInventoryCallback(array $params): array
+    {
+        return $this->httpPost('wms/realTimeInventoryCallback', $params);
+    }
 }
