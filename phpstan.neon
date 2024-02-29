@@ -1,0 +1,16 @@
+# docs: https://phpstan.org/config-reference
+# phpdoc types: https://phpstan.org/writing-php-code/phpdoc-types
+
+parameters:
+    level: 8
+    paths:
+        - src
+        - tests
+    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: true
+    inferPrivatePropertyTypeFromConstructor: true
+    treatPhpDocTypesAsCertain: true
+    ignoreErrors:
+        - "#Method .*__callStatic\\(\\) has parameter .* with no value type specified#"
+        - "#Method .*__get\\(\\) has .* type specified.#"
+#        - "#Call to an undefined (static )?method Illuminate#"
