@@ -3,6 +3,7 @@
 namespace Abbotton\DouDian\Tests;
 
 use Abbotton\DouDian\DouDian;
+use Abbotton\DouDian\DouDianException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -27,6 +28,29 @@ class DouDianTest extends TestCase
         $config = $this->getConfig();
 
         (new DouDian($config))->foo->bar(); // @phpstan-ignore-line
+    }
+
+    /**
+     * @throws DouDianException
+     */
+    public function test_config(): void
+    {
+        $config = $this->getConfig();
+        $doudian = new DouDian($config);
+
+        $this->assertSame($config, $doudian->config());
+        $this->assertSame($config['app_key'], $doudian->config('app_key'));
+    }
+
+    /**
+     * @throws DouDianException
+     */
+    public function test_config_throw_exception()
+    {
+        $this->expectExceptionMessage('Invalid configuration value');
+        $this->expectExceptionCode(404);
+
+        (new DouDian($this->getConfig()))->config('not exist key');
     }
 
     private function getClass(string $class): string

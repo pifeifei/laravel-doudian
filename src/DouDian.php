@@ -71,7 +71,7 @@ class DouDian
     /** @var array<string, mixed> */
     private array $config;
 
-    private ?int $shop_id = null;
+    private ?int $shopId = null;
 
     /**
      * @param  array<string, mixed>  $config
@@ -91,7 +91,7 @@ class DouDian
             throw new DouDianException($class.' Not found', 404);
         }
 
-        return new $class($this->config, $this->shop_id);
+        return new $class($this->config, $this->shopId);
     }
 
     /**
@@ -101,7 +101,7 @@ class DouDian
      */
     public function setShopId(?int $shopId = null): self
     {
-        $this->shop_id = $shopId;
+        $this->shopId = $shopId;
 
         return $this;
     }
@@ -111,6 +111,22 @@ class DouDian
      */
     public function getShopId(): ?int
     {
-        return $this->shop_id;
+        return $this->shopId;
+    }
+
+    /**
+     * @throws DouDianException
+     */
+    public function config(?string $name = null)
+    {
+        if ($name) {
+            if (isset($this->config[$name])) {
+                return $this->config[$name];
+            }
+
+            throw new DouDianException(sprintf('Invalid configuration value %s', $name), 404);
+        }
+
+        return $this->config;
     }
 }
