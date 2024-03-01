@@ -58,4 +58,4 @@ jobs :
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress --dev
 
       - name : Execute tests
-        run : vendor/bin/phpunit
+        run : php -d xdebug.mode=coverage vendor/bin/phpunit
