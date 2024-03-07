@@ -218,6 +218,18 @@ class Yunc extends BaseRequest
     }
 
     /**
+     * 创建普通入库单。
+     *
+     * @param array<string, mixed> $params
+     * @return array<string, mixed>
+     * @throws RequestException
+     */
+    public function wmsInboundCreate(array $params): array
+    {
+        return $this->httpPost('yunc/wms/inbound/create', $params);
+    }
+
+    /**
      * 货品数据采集接口.
      *
      * @param  array<string, mixed>  $params
