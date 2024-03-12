@@ -239,7 +239,7 @@ class Yunc extends BaseRequest
      */
     public function syncCollectInfo(array $params): array
     {
-        return $this->httpPost('wms/syncCollectInfo', $params);
+        return $this->httpPost('yunc/syncCollectInfo', $params);
     }
 
     /**
@@ -252,6 +252,6 @@ class Yunc extends BaseRequest
      */
     public function realTimeInventoryCallback(array $params): array
     {
-        return $this->httpPost('wms/realTimeInventoryCallback', $params);
+        return $this->httpPost('yunc/realTimeInventoryCallback', $params);
     }
 }
